@@ -4,6 +4,10 @@ namespace DeepLink\Common;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class DeepLinkServiceProvider
+ * @package DeepLink\Common
+ */
 class DeepLinkServiceProvider extends ServiceProvider
 {
     /**
