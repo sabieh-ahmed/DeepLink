@@ -34,7 +34,13 @@ Publish All vendor files
 $ php artisan vendor:publish
 ```
 
-All set to go.
+
+
+Add HasMany Relation to your User Model
+```sh
+$ php artisan vendor:publish
+```
+
 
 
 use DeepLink Trait in your controller
@@ -61,23 +67,19 @@ Add Devices to user model.
 
 
 ```sh
-use DeepLink\Common\Traits\DeepLinkHelper;
 
-class UserController extends Controller
+use DeepLink\Common\Models\Device;
+class User extends Authenticatable
 {
-
-  
-    public function login(Request $request)
+    /**
+     * User has many devices
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function devices()
     {
-    ....
-       
-        if($request->has('device_token')
-        {
-            DeepLinkHelper::add_device($user,$request['device_token']);
-        }
-    
-    
+        return $this->hasMany(Device::class);
     }
+}
 
 ....
 
