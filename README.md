@@ -138,3 +138,56 @@ class UserController extends Controller
 ....
 
 ```
+
+
+
+
+
+Remove File from Cloudinary
+
+
+```sh
+use DeepLink\Common\Traits\DeepLinkHelper;
+
+class UserController extends Controller
+{
+
+  
+    public function delete_file($file_name)
+    {
+    ....
+           $data = DeepLinkHelper::remove_file_cloudinary($file_name);
+           return $data;
+    }
+
+....
+
+```
+
+
+
+
+BroadCast Event Directy through Redis and Socket IO
+
+
+```sh
+use DeepLink\Common\Traits\DeepLinkHelper;
+
+class UserController extends Controller
+{
+
+  
+    public function broadcast_event(Request $request)
+    {
+    ....
+           $user = User::find(1);
+           DeepLinkHelper::socketio_broadcast($user,"My-Event",["foo"=>"bar"]);
+    }
+
+....
+
+```
+
+
+
+
