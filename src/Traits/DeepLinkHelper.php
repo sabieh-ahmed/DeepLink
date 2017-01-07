@@ -71,6 +71,24 @@ trait DeepLinkHelper
     }
 
 
+
+    /**
+     * Add device to user model
+     * @param $user
+     * @param $device_token
+     * @return mixed
+     */
+    public static function add_device($user, $device_token)
+    {
+        $devices = Device::where('device_token', $device_token)->get();
+        foreach ($devices as $device) {
+            $device->delete();
+        }
+        $new_device = Device::create(['device_token' => $device_token, 'user_id' => $user->id]);
+        return $new_device;
+    }
+
+
     /**
      * Upload files to cloudinary
      * @param $file
