@@ -13,7 +13,7 @@ DeepLink is Laravel 5.3 Helper for various common tasks of you application just 
 
 ### Installation
 
-Dillinger requires [PHP](https://nodejs.org/) v5.6+ to run.
+DeepLink requires [PHP](https://nodejs.org/) v5.6+ to run.
 
 
 Install the package
